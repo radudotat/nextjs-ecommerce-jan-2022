@@ -1,4 +1,3 @@
-/* eslint-disable require-await */
 import camelcaseKeys from 'camelcase-keys';
 import { config } from 'dotenv-safe';
 import postgres from 'postgres';

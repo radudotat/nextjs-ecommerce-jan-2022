@@ -8,6 +8,9 @@
     "lint": "next lint",
     "migrate": "dotenv ley"
   },
+  "engines": {
+    "node": "16.x"
+  },
   "dependencies": {
     "@emotion/babel-plugin": "^11.7.2",
     "@emotion/react": "^11.7.1",

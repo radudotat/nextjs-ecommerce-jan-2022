@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+
 import { css } from '@emotion/react';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -25,7 +27,6 @@ export default function Products(props) {
       {props.products.map((product) => {
         return (
           <div key={`product-${product.id}`} css={productStyles}>
-            {/* Dynamic link, eg. /products/1, /products/2, etc */}
             <Link href={`/products/${product.id}`}>
               <a>
                 {product.name} is a {product.type} with a {product.accessory}
@@ -38,26 +39,14 @@ export default function Products(props) {
   );
 }
 
-// Code in getServerSideProps runs only in
-// Node.js, and allows you to do fancy things:
-// - Read files from the file system
-// - Connect to a (real) database
-//
-// getServerSideProps is exported from your files
-// (ONLY FILES IN /pages) and gets imported
-// by Next.js
 export async function getServerSideProps() {
-  const products = await getProducts();
+  const productsList = await getProducts();
 
-  // Important:
-  // - Always return an object from getServerSideProps
-  // - Always return a key in that object that is
-  // called props
   return {
     props: {
       // In the props object, you can pass back
       // whatever information you want
-      products: products,
+      products: productsList,
     },
   };
 }
