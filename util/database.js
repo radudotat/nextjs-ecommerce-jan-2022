@@ -5,7 +5,9 @@ import postgres from 'postgres';
 // Read the environment variables from the .env
 // file, which will then be available for all
 // following code
-config();
+config({
+  allowEmptyValues: true,
+});
 
 // Connect only once to the database
 // https://github.com/vercel/next.js/issues/7811#issuecomment-715259370
