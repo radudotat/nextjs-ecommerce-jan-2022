@@ -3,7 +3,13 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Layout from '../components/Layout';
 import styles from '../styles/Home.module.css';
-import { getProducts } from '../util/database';
+import { getProducts, Product, ProductsList } from '../util/database';
+import formatPrice from '../util/helpers';
+
+type Props = {
+  product: Product;
+  products: ProductsList;
+};
 
 // const productStyles = css`
 //   border-radius: 5px;
@@ -17,7 +23,7 @@ const productStyles = css`
   margin-bottom: 20px;
 `;
 
-export default function Products(props) {
+export default function Products(props: Props) {
   return (
     <Layout>
       <Head>
@@ -27,12 +33,12 @@ export default function Products(props) {
 
       <h1 className={styles.title}>Products</h1>
 
-      {props.products.map((product) => {
+      {props.products.map((product: Product) => {
         return (
           <div key={`product-${product.id}`} css={productStyles}>
             <Link href={`/products/${product.id}`}>
               <a>
-                {product.name} costs {product.price}
+                {product.name} costs {formatPrice(product.price)}
               </a>
             </Link>
           </div>

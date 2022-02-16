@@ -11,6 +11,21 @@ config({
   allowEmptyValues: true,
 });
 
+// Type needed for the connection function below
+declare module globalThis {
+  let postgresSqlClient: ReturnType<typeof postgres> | undefined;
+}
+
+export type Product = {
+  id: number;
+  menuId: number;
+  categoryId: number;
+  name: string;
+  price: number;
+};
+
+export type ProductsList = [];
+
 // Connect only once to the database
 // https://github.com/vercel/next.js/issues/7811#issuecomment-715259370
 function connectOneTimeToDatabase() {
@@ -96,15 +111,15 @@ console.log('db file');
 // ];
 
 export async function getProducts() {
-  const products = await sql`
+  const products = await sql<Product[]>`
     SELECT * FROM products;
   `;
 
   return products.map((product) => camelcaseKeys(product));
 }
 
-export async function getProductById(id) {
-  const [product] = await sql`
+export async function getProductById(id: number) {
+  const [product] = await sql<Product[]>`
     SELECT * FROM products WHERE id = ${id};
   `;
 
