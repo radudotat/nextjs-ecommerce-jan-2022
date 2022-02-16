@@ -2,7 +2,7 @@ import Head from 'next/head';
 // import Image from 'next/image';
 import Layout from '../components/Layout';
 
-export default function Home(props) {
+export default function Home() {
   return (
     <Layout>
       <Head>
@@ -13,7 +13,6 @@ export default function Home(props) {
       <h1 /*  className={props.styles.title} */>
         Welcome to <a href="https://ecommerce-2022.herokuapp.com/">Shop!</a>
       </h1>
-      {JSON.stringify(props)}
     </Layout>
   );
 }

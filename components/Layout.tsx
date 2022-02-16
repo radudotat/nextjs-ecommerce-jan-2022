@@ -3,7 +3,11 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Header from './Header';
 
-export default function Layout(props) {
+type Props = {
+  children: JSX.Element[] | JSX.Element;
+};
+
+export default function Layout(props: Props) {
   return (
     <>
       <Head>
