@@ -1,3 +1,7 @@
+import setPostgresDefaultsOnHeroku from './heroku.defaults';
+
+setPostgresDefaultsOnHeroku();
+
 const options = {};
 
 if (process.env.NODE_ENV === 'production') {
