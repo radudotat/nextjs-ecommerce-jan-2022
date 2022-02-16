@@ -9,10 +9,10 @@ export default function SingleProduct(props) {
     <Layout>
       <Head>
         <title>
-          {props.product.name} ({props.product.type})
+          {props.product.name} ({props.product.price})
         </title>
         <meta
-          description={`${props.product.name} is a ${props.product.type} with a ${props.product.accessory}`}
+          description={`${props.product.name} is a ${props.product.price}`}
         />
       </Head>
       <h1>
@@ -26,9 +26,7 @@ export default function SingleProduct(props) {
       /> */}
       <div>id: {props.product.id}</div>
       <div>name: {props.product.name}</div>
-      <div>age: {props.product.age}</div>
-      <div>type: {props.product.type}</div>
-      <div>accessory: {props.product.accessory}</div>
+      <div>age: {props.product.price}</div>
     </Layout>
   );
 }

@@ -11,7 +11,7 @@ export default function Home(props) {
       </Head>
 
       <h1 /*  className={props.styles.title} */>
-        Welcome to <a href="https://nextjs.org">Shop!</a>
+        Welcome to <a href="https://ecommerce-2022.herokuapp.com/">Shop!</a>
       </h1>
       {JSON.stringify(props)}
     </Layout>
