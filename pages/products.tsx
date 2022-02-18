@@ -9,7 +9,7 @@ import PizzaIso from '../public/svg/pizza-iso.svg';
 import styles from '../styles/Home.module.css';
 import {
   getParsedCookie,
-  reservedProducts,
+  ReservedProducts,
   setParsedCookie,
 } from '../util/cookies';
 import { getProducts, Product, ProductsList } from '../util/database';
@@ -18,7 +18,7 @@ import formatPrice from '../util/helpers';
 type Props = {
   // product: Product;
   products: ProductsList;
-  reservedProducts: reservedProducts;
+  reservedProducts: ReservedProducts;
 };
 
 // const productStyles = css`

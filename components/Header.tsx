@@ -12,10 +12,14 @@ const headerStyle = css`
   }
 `;
 
+// type Props = {
+//   children: JSX.Element[] | JSX.Element | React.ReactNode;
+// };
+
 export default function Header() {
   return (
     <header css={headerStyle}>
-      <Navigation children={undefined} />
+      <Navigation />
     </header>
   );
 }

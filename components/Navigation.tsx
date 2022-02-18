@@ -7,10 +7,6 @@ import styles from '../styles/Home.module.css';
 
 // import Header from './Header';
 
-// type Props = {
-//   // children: JSX.Element[] | JSX.Element | React.ReactNode;
-// };
-
 export default function Navigation(/* props: Props */) {
   return (
     <nav className={styles.navigation}>
