@@ -1,5 +1,9 @@
 const products = [
   {
+    name: 'avocado',
+    price: 890,
+  },
+  {
     name: 'margerita',
     price: 640,
   },

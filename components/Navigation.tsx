@@ -6,6 +6,9 @@ import logoShop from '../public/svg/pizza-chef.svg';
 import styles from '../styles/Home.module.css';
 
 // import Header from './Header';
+function toggleViewCart() {
+  console.log('toggleViewCart');
+}
 
 export default function Navigation(/* props: Props */) {
   return (
@@ -25,11 +28,9 @@ export default function Navigation(/* props: Props */) {
         </Link>
       </div>
       <div className="cart">
-        <Link href="/about">
-          <a>
-            <BiCart height="40" />
-          </a>
-        </Link>
+        <button onClick={() => toggleViewCart()}>
+          <BiCart height="40" />
+        </button>
       </div>
     </nav>
   );
