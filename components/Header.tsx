@@ -1,7 +1,8 @@
 import { css } from '@emotion/react';
-import Image from 'next/image';
-import Link from 'next/link';
-import logoShop from '../public/vercel.svg';
+// import Image from 'next/image';
+// import Link from 'next/link';
+// import logoShop from '../public/vercel.svg';
+import Navigation from './Navigation';
 
 const headerStyle = css`
   background-color: #ddd;
@@ -14,16 +15,7 @@ const headerStyle = css`
 export default function Header() {
   return (
     <header css={headerStyle}>
-      <Image src={logoShop} alt="Our Shop Logo" height="20" />
-      <Link href="/">
-        <a>Home</a>
-      </Link>
-      <Link href="/products">
-        <a>Products</a>
-      </Link>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
+      <Navigation children={undefined} />
     </header>
   );
 }

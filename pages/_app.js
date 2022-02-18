@@ -22,6 +22,7 @@ function MyApp({ Component, pageProps }) {
 
           * {
             box-sizing: border-box;
+            outline: dashed 1px #e4e4e4;
           }
         `}
       />

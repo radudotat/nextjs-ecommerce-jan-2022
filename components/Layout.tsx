@@ -13,9 +13,11 @@ export default function Layout(props: Props) {
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className={styles.container}>
+      <div>
         <Header />
-        <main>{props.children}</main>
+        <main className={(styles.container, styles.main)}>
+          {props.children}
+        </main>
       </div>
     </>
   );
