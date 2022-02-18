@@ -1,16 +1,17 @@
-import Head from 'next/head';
+// import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { BiCart } from 'react-icons/bi';
 import logoShop from '../public/svg/pizza-chef.svg';
 import styles from '../styles/Home.module.css';
-import Header from './Header';
 
-type Props = {
-  children: JSX.Element[] | JSX.Element | React.ReactNode;
-};
+// import Header from './Header';
 
-export default function Navigation(props: Props) {
+// type Props = {
+//   // children: JSX.Element[] | JSX.Element | React.ReactNode;
+// };
+
+export default function Navigation(/* props: Props */) {
   return (
     <nav className={styles.navigation}>
       <div className={styles.logo}>

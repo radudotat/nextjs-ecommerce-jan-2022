@@ -16,10 +16,10 @@ export function getParsedCookie(key: string) {
   }
 }
 
-type reservedProduct = { id: string; price: number };
-export type reservedProducts = reservedProduct[];
+type ReservedProduct = { id: string; price: number };
+export type ReservedProducts = ReservedProduct[];
 
-export function setParsedCookie(key: string, value: reservedProducts) {
+export function setParsedCookie(key: string, value: ReservedProducts) {
   console.log('setParsedCookie', key, value);
 
   Cookies.set(key, JSON.stringify(value));
@@ -29,6 +29,6 @@ export function deleteCookie(key: string) {
   Cookies.remove(key);
 }
 
-export function stringifyCookieValue(value: reservedProducts) {
+export function stringifyCookieValue(value: ReservedProducts) {
   return JSON.stringify(value);
 }

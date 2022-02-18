@@ -16,7 +16,7 @@ import { getProducts, Product, ProductsList } from '../util/database';
 import formatPrice from '../util/helpers';
 
 type Props = {
-  product: Product;
+  // product: Product;
   products: ProductsList;
   reservedProducts: reservedProducts;
 };
@@ -51,11 +51,16 @@ const productNameStyles = css`
   font-weight: 700;
 `;
 
+const productLinkStyles = css`
+  text-align: center;
+  cursor: pointer;
+`;
+
 export default function Products(props: Props) {
   const [productsArray, setProductsArray] = useState(props.reservedProducts);
 
   function addProductToCart(id: number) {
-    console.log('addProductToCart', id);
+    console.log('addProductToCart', id, productsArray);
     // 1. get the value of the cookie
     const cookieValue = getParsedCookie('reservedProducts') || [];
 
@@ -86,6 +91,7 @@ export default function Products(props: Props) {
     // 3. set the new value of the cookie
     setProductsArray(newCookie);
     setParsedCookie('reservedProducts', newCookie);
+    /* console.log('productsArray, productsArray'); */
   }
 
   return (
@@ -100,8 +106,12 @@ export default function Products(props: Props) {
         {props.products.map((product: Product) => {
           return (
             <div key={`product-${product.id}`} css={productStyles}>
-              <div css={productNameStyles}>{product.name}</div>
-              <Image src={PizzaIso} />
+              <Link href={`/products/${product.id}`}>
+                <a css={productLinkStyles}>
+                  <div css={productNameStyles}>{product.name}</div>
+                  <Image src={PizzaIso} />
+                </a>
+              </Link>
               <button onClick={() => addProductToCart(product.id)}>
                 €{formatPrice(product.price)}
                 <BiCart height="40" />
